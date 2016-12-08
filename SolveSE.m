@@ -1,3 +1,3 @@
-function solution = SolveSE(matrix, SESolvingMethod)
-	return
+function solution = SolveSE(matrix)
+
 end;

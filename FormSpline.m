@@ -1,3 +1,3 @@
-function interpolationSpline = FormSpline(points, func, degree, fault, matrix, SECreationMethod)
+function interpolationSpline = FormSpline(points, values, degree, fault, matrix)
 	return
 end;
