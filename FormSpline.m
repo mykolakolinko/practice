@@ -1,3 +1,3 @@
-function interpolationSpline = FormSpline(points, values, degree, fault, matrix)
+function interpolationSpline = FormSpline(points, values, solution)
 	return
 end;

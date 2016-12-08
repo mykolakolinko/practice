@@ -1,3 +1,3 @@
-function matrix = CreateSEMatrix(points, values, degree)
+function matrix = CreateSEMatrix(points, values)
 	return
 end;
