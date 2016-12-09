@@ -3,7 +3,7 @@ function [] = main(func, points, plotPoints, leftCondition)
 		func = @(t)(sin(t^2));
 	end;
 	if ~exist('points')
-		points = 0 : 1 : 5;
+		points = sqrt(0 : 0.2 : 1) * 5;
 	end;
 	if ~exist('plotPoints')
 		plotPoints = 0 : 0.01 : 5;
@@ -19,13 +19,13 @@ function [] = main(func, points, plotPoints, leftCondition)
 
 	figure('units','normalized','outerposition',[0 0 1 1], 'paperorientation', 'landscape');
 	plot(plotPoints, arrayfun(func, plotPoints), 'k-.', plotPoints, arrayfun(splineVal, plotPoints), 'k', points, arrayfun(func, points), 'kx');
-	legend('interpolated function', 'interpolation spline', 'pivot points');
+	legend('interpolated function', 'interpolation spline', 'pivot points', 'location', 'southoutside');
 	title(sprintf('Maximal deviation: %e', max(abs(arrayfun(func, plotPoints) - arrayfun(splineVal, plotPoints)))));
 	grid minor;
 	print -dpdf ./result.pdf;
 	figure('units','normalized','outerposition',[0 0 1 1], 'paperorientation', 'landscape');
 	plot(plotPoints, arrayfun(splineDerivative, plotPoints), 'k--', plotPoints, arrayfun(splineSecondDerivative, plotPoints), 'k');
-	legend('spline first derivative', 'spline second derivative');
+	legend('spline first derivative', 'spline second derivative', 'location', 'southoutside');
 	grid minor;
 	print -dpdf -append ./result.pdf;
 end;
